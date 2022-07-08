@@ -63,7 +63,6 @@ QB.Phone.Functions.SetupApplications = function(data) {
     $.each(data.applications, function(i, app){
         var applicationSlot = $(".phone-applications").find('[data-appslot="'+app.slot+'"]');
         var blockedapp = IsAppJobBlocked(app.blockedjobs, QB.Phone.Data.PlayerJob.name)
-
         if ((!app.job || app.job === QB.Phone.Data.PlayerJob.name) && !blockedapp) {
             $(applicationSlot).css({"background-color":app.color});
             var icon = '<i class="ApplicationIcon '+app.icon+'" style="'+app.style+'"></i>';
@@ -110,7 +109,6 @@ $(document).on('click', '.phone-application', function(e){
     e.preventDefault();
     var PressedApplication = $(this).data('app');
     var AppObject = $("."+PressedApplication+"-app");
-
     if (AppObject.length !== 0) {
         if (CanOpenApp) {
             if (QB.Phone.Data.currentApplication == null) {
@@ -461,7 +459,7 @@ QB.Phone.Functions.LoadPhoneData = function(data) {
     QB.Phone.Functions.LoadContacts(data.PhoneData.Contacts);
     QB.Phone.Functions.SetupApplications(data);
 
-    $("#player-id").html("<span>" + "#" + data.PlayerId + "</span>")
+    $("#player-id").html("<span>" + "ID: " + data.PlayerId + "</span>")
 }
 
 QB.Phone.Functions.UpdateTime = function(data) {
@@ -683,6 +681,19 @@ $(document).ready(function(){
             case "RefreshAlerts":
                 QB.Phone.Functions.SetupAppWarnings(event.data.AppData);
                 break;
+            case "startVideoCall":
+                console.log("Aranan id VideoCall js:" , event.data.callId)
+                startCall(event.data.callId)
         }
     })
 });
+
+function startVideCalls(){
+    $.post("https://qb-phone/startVideoCall");
+    $(".phone-call-videocall").css("display","block")
+    $(".phone-call-ongoing").css("display","none")
+    $("#vaid-video").css("display","block")
+    $("#phone-call-ongoing-videocall").css("background-color","red")
+    $("#phone-call-ongoing-videocall").attr("onClick","stopVideoCalls()")
+    $(".phone-call-videocall").css("display","block")
+  }

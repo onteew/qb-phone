@@ -165,30 +165,12 @@ body {
     position: absolute;
     color: white;
 }
-#phone-signal {
-    font-size: 1vh;
-    padding: 2.3vh 0 0 2vh;
-    float: left;
-    /* background-color: tomato; */
-}
-#phone-signall {
-    font-size: 1vh;
-    padding: 2.3vh 0 0 0.5vh;
-    float: left;
-}
-#phone-time {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1vh;
-    padding: 2.3vh 0 0 1vh;
-    float: left;
-    color: white !important;
-}
 
 #phone-server {
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    font-size:0.8vh;
-    padding: 2vh 0 0 0.1vh;
+    font-size: 1vh;
+    padding: 2vh 0 0 1vh;
     float: left;
     color: white !important;
 }
@@ -197,11 +179,18 @@ body {
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     font-size: 1vh;
-    padding: 2.3vh 0 0 3.0vh;
+    padding: 2vh 0 0 1vh;
     float: left;
     color: white !important;
 }
 
+#phone-time {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1vh;
+    padding: 2vh 0 0 5.5vh;
+    float: left;
+    color: white !important;
+}
 
 #phone-icons {
     font-size: 0.95vh;
@@ -209,18 +198,16 @@ body {
     float: right;
     color: white !important;
 }
-#phone-wifi {
-    /* transform: rotate(-90deg); */
-    top: 0.2vh;
-    left: -6.0vh;
+
+#phone-signal {
+    font-size: 1vh;
+    left: -0.3vh;
     position: relative;
 }
 
-
 #phone-battery {
-    /* transform: rotate(-90deg); */
-    top: 0.2vh;
-    left: -6.0vh;
+    transform: rotate(-90deg);
+    top: -0.1vh;
     position: relative;
 }
 
@@ -251,7 +238,7 @@ body {
 .phone-home-container {
     position: relative;
     height: 2.3vh;
-    /* width: 100%; */
+    width: 100%;
     margin: 0 auto;
     top: 2vh;
     transform: translateY(-50%);
@@ -260,29 +247,12 @@ body {
     z-index: 500;
 }
 
-/* .phone-home-button {
+.phone-home-button {
     position: relative;
     height: 0.5vh;
     width: 10vh;
     background-color: white;
     border-radius: 0.8vh;
-    top: 80%;
-    transform: translateY(-50%);
-    margin: 0px auto;
-    transition: all 0.1s ease 0s;
-} */
-.phone-home-button {
-    position: relative;
-    height: 1.7vh;
-    width: 1.7vh;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    /* background-color: #000000; */
-    /* background-color: #0e0e0e; */
-    border-radius: 100%;
-    border: white;
-    border-style: solid;
-    border-width: 2.2px;
     top: 80%;
     transform: translateY(-50%);
     margin: 0px auto;
@@ -323,17 +293,12 @@ body {
     width: 100%;
     bottom: 7vh;
 }
+
 .phone-home-applications {
     position: absolute;
     width: 100%;
-    bottom: 32vh;
-    margin-left: -0.3vh;
-}
-/* .phone-home-applications {
-    position: absolute;
-    width: 100%;
     bottom: 17vh;
-} */
+}
 
 .phone-application > i {
     line-height: 4.6vh;
@@ -357,7 +322,7 @@ body {
     left: 0;
     right: 0;
     top: -8%;
-    border-radius: 1vh;
+    border-radius: 3vh;
     overflow: hidden;
     box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
     z-index: 140;

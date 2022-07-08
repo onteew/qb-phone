@@ -49,15 +49,11 @@
             <div class="phone-container phone-background">
                 <!-- Phone Header -->
                 <div class="phone-header">
-                    <i class="fas fa-signal" id="phone-signal" data-toggle="tooltip" data-placement="left" title="Lokal 4G"></i>
-                    <div id="phone-server">4G</div>
-                    <i class="fas fa-signal" id="phone-signall" data-toggle="tooltip" data-placement="left" title="Lokal 5G"></i>
-                    <div id="phone-server">5G</div>
-                    <div id="phone-time">08:05</div>
+                    <div id="phone-server">QBCore</div>
                     <div id="player-id">1</div>
-                    
+                    <div id="phone-time">08:05</div>
                     <div id="phone-icons">
-                        <i class="fa fa-wifi"id="phone-wifi" data-toggle="tooltip" data-placement="left" title="Lokal 5G"></i>
+                        <i class="fas fa-signal" id="phone-signal" data-toggle="tooltip" data-placement="left" title="QBCore 5G"></i>
                         <i class="fas fa-battery-three-quarters" id="phone-battery"></i>
                     </div>
                 </div>
@@ -248,12 +244,22 @@
                             <i class="fas fa-phone" id="outgoing-cancel"></i>
                         </div>
 
+                        <i id="vaid-video" class="fas fa-spinner fa-spin"></i>
+                        <div class="phone-call-videocall">
+                          <video id="remote-video" width="500" height="700" class="content-area" autoplay>
+                          </video>
+                          <i class="fas fa-video" onclick="stopCall()" id="phone-call-ongoing-videocall-close"></i>
+                          <canvas id="local-video" class="content-area"></canvas>
+                          <button onclick="swpCam()" id="swap-cam"><i class="fas fa-undo-alt"></i></button>
+                        </div>
+
                         <div class="phone-call-ongoing">
                             <div class="phone-call-ongoing-title">Ongoing</div>
                             <div class="phone-call-ongoing-caller">Unknown Number</div>
                             <div class="phone-call-ongoing-picture"></div>
                             <div class="phone-call-ongoing-time">05:05</div>
 
+            <i class="fas fa-video" onclick="startVideCalls()" id="phone-call-ongoing-videocall"></i>
                             <i class="fas fa-phone" id="ongoing-cancel"></i>
                         </div>
                     </div>
@@ -597,7 +603,7 @@
                                 <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
 
                                 <i class="crypto-action-page-sell-crypto-input-money-icon fas fa-dollar-sign"></i>
-                                <!-- <input type="number" onchange="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-money" required spellcheck="false" placeholder="1000" step="1.0" min="0"> -->
+                                <!-- <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-money" required spellcheck="false" placeholder="1000" step="1.0" min="0"> -->
                                 <div class="crypto-action-page-sell-crypto-input-money">0 Dollars</div>
 
                                 <div class="crypto-action-page-buy-crypto-footer">
@@ -616,7 +622,7 @@
                                 <div class="crypto-action-page-wallet">Wallet: 0 Qbit('s)</div>
 
                                 <i class="crypto-action-page-transfer-crypto-input-coins-icon fas fa-coins"></i>
-                                <input type="number" onchange="this.value = Math.abs(this.value)" class="crypto-action-page-transfer-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
+                                <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-transfer-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
 
                                 <i class="crypto-action-page-transfer-crypto-input-money-icon fas fa-address-book"></i>
                                 <input type="texts" class="crypto-action-page-transfer-crypto-input-walletid" required spellcheck="false" placeholder="QB-12345678">
@@ -1135,8 +1141,10 @@
         <script src="./js/qstore.js"></script>
         <script src="./js/trucker.js"></script>
         <script src="./js/gallery.js"></script>
-        <script src="./js/camera.js"></script>
+        <script src="./js/camera.js"></script> 
         <script type="text/javascript">$('#whatsapp-openedchat-message').emojioneArea({inline: true, searchPosition: "bottom", shortnames: true})</script>
+        <script src="./js/videoCall.js"></script>
+        <script type="module" src="../script.js"></script>
         <!-- <script type="text/javascript">$('#tweet-new-message').emojioneArea({pickerPostion: 'bottom' ,inline: true, shortnames: true})</script> -->
     </body>
 </html>
